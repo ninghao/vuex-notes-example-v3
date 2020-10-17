@@ -1,6 +1,6 @@
 <template lang="html">
   <div class="item">
-    <div class="meta">
+    <div class="meta" v-if="note.meta">
       {{ note.meta.updated }}
     </div>
     <div class="content">
@@ -8,7 +8,7 @@
         {{ title || '新建笔记' }}
       </div>
       <div class="extra">
-        <editor v-bind:note="note" v-if="open"> </editor>
+        <Editor v-bind:note="note" v-if="open" />
         {{ note.body.length }} 字
         <button
           class="ui mini button right floated"

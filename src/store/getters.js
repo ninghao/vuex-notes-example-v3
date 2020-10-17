@@ -3,7 +3,10 @@ moment.locale('zh-CN');
 
 export const notes = state => {
   return state.notes.map(note => {
-    note.meta.updated = moment(note.meta.created).fromNow();
+    if (note.meta) {
+      note.meta.updated = moment(note.meta.created).fromNow();
+    }
+
     return note;
   });
 };

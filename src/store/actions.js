@@ -42,7 +42,7 @@ export const updateNote = async ({ dispatch }, note) => {
   // 加载笔记集合
   const notesCollection = await loadCollection('notes');
 
-  // 创建笔记
+  // 更新笔记
   notesCollection.update(note);
 
   // 保存数据库
@@ -59,7 +59,7 @@ export const deleteNote = async ({ dispatch }, note) => {
   // 加载笔记集合
   const notesCollection = await loadCollection('notes');
 
-  // 创建笔记
+  // 删除笔记
   notesCollection.remove(note);
 
   // 保存数据库

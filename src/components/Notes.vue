@@ -11,8 +11,7 @@
       添加笔记
     </a>
     <div class="ui divided items">
-      <note v-for="note in notes" v-bind:note="note" v-bind:key="note.$loki">
-      </note>
+      <Note v-for="note in notes" v-bind:note="note" v-bind:key="note.$loki" />
       <span class="ui small disabled header" v-if="!notes.length">
         还没有笔记，请按下 '添加笔记' 按钮。
       </span>
@@ -31,7 +30,7 @@ export default {
   },
 
   methods: {
-    ...mapActions(['initial', 'createNote', 'getNotes']),
+    ...mapActions(['createNote', 'getNotes']),
   },
 
   computed: {
@@ -44,4 +43,4 @@ export default {
 };
 </script>
 
-<style lang="css"></style>
+<style></style>
